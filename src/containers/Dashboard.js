@@ -146,7 +146,13 @@ export default class {
     }
 
     bills.forEach(bill => {
-      $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
+      if (document.querySelector(`#open-bill${bill.id}`) !== null) {
+        // check if element already has an event listenner, and add one only if there is none
+        if (document.querySelector(`#open-bill${bill.id}`).getAttribute('listenner') !== 'true') {
+          document.querySelector(`#open-bill${bill.id}`).setAttribute('listenner', 'true')
+          $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
+        }
+      }
     })
 
     return bills
