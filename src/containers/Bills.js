@@ -38,7 +38,7 @@ export default class {
             try {
               return {
                 ...doc,
-                date: formatDate(doc.date),
+                
                 status: formatStatus(doc.status)
               }
             } catch(e) {
@@ -52,7 +52,9 @@ export default class {
               }
             }
           })
+          
           console.log('length', bills.length)
+          console.log(bills)
         return bills
       })
     }
