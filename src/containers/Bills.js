@@ -16,10 +16,12 @@ export default class {
     new Logout({ document, localStorage, onNavigate })
   }
 
+  // TEST DONE
   handleClickNewBill = () => {
     this.onNavigate(ROUTES_PATH['NewBill'])
   }
 
+  // TEST DONE
   handleClickIconEye = (icon) => {
     const billUrl = icon.getAttribute("data-bill-url")
     const imgWidth = Math.floor($('#modaleFile').width() * 0.5)
@@ -27,6 +29,7 @@ export default class {
     $('#modaleFile').modal('show')
   }
 
+  // TEST DONE
   getBills = () => {
     if (this.store) {
       return this.store
@@ -54,7 +57,6 @@ export default class {
           })
           
           console.log('length', bills.length)
-          console.log(bills)
         return bills
       })
     }
